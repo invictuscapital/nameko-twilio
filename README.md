@@ -22,7 +22,7 @@ class Service:
     def send_sms(self, number, message):
         msg = self.twilio.messages.create(
             number,
-            body=f"Your mobile verification code for Invictus Capital is {payload['code']}.",
+            body=message,
             from_="+1234567890"
         )
         return f"Message {msg.sid}"
